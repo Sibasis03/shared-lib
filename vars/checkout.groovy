@@ -1,11 +1,5 @@
 def call(String branch, String credentialsId = 'gitlab-https-credentials') {
     def config = repoUrl()
-    git branch: "${branch}", url: "${config.repoUrl}", credentialsId: credentialsId
-}
-
-// Method to clone the repository with error handling
-def call(String branch, String credentialsId = 'gitlab-https-credentials') {
-    def config = repoUrl()
 
     try {
         echo "Cloning repository from ${config.repoUrl} on branch ${branch}"
