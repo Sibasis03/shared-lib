@@ -8,12 +8,14 @@ def call() {
             }
         }
 
+        timeout(time: 3, unit: 'MINUTES') {
         script {
-            def qgStatus = waitForQualityGate() 
+            def qgStatus = waitForQualityGate()
             if (qgStatus.status != 'OK') {
                 error "Quality Gate failed: ${qgStatus.status}"
             }
         }
+    }
 
     } catch (Exception e) {
         echo "Error occurred during static code analysis: ${e.getMessage()}"
