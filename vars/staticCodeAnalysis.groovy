@@ -8,13 +8,13 @@ def call() {
             }
         }
 
-        timeout(time: 3, unit: 'MINUTES') {
+        // timeout(time: 3, unit: 'MINUTES') {
         script {
             def qgStatus = waitForQualityGate()
             if (qgStatus.status != 'OK') {
                 error "Quality Gate failed: ${qgStatus.status}"
             }
-        }
+        // }
     }
 
     } catch (Exception e) {
