@@ -7,10 +7,10 @@ def call() {
         }
 
         // script {
-        //     def qgStatus = waitForQualityGate() // This needs to be in a script block
-        //     if (qgStatus.status != 'OK') {
-        //         error "Quality Gate failed: ${qgStatus.status}"
-        //     }
+            def qgStatus = waitForQualityGate() // This needs to be in a script block
+            if (qgStatus.status != 'OK') {
+                error "Quality Gate failed: ${qgStatus.status}"
+            }
         // }
 
     } catch (Exception e) {
