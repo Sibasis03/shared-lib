@@ -35,7 +35,6 @@ def call() {
                     ${tool 'sonarqube-scanner'}/bin/sonar-scanner \
                     -Dsonar.projectKey=${JOB_BASE_NAME} \
                     -Dsonar.sources=${env.WORKSPACE}/src/main/java \
-                    -Dsonar.java.binaries=${env.WORKSPACE_PATH_JENKINS_SERVER}. \
                     -Dsonar.host.url=$SONAR_URL \
                     -Dsonar.token=$SONAR_AUTH_TOKEN \
                     -Dsonar.qualitygate.wait=true
