@@ -34,7 +34,7 @@ def call() {
                 sh """
                     ${tool 'sonarqube-scanner'}/bin/sonar-scanner \
                     -Dsonar.projectKey=${JOB_BASE_NAME} \
-                    -Dsonar.sources=${env.WORKSPACE_PATH_JENKINS_SERVER} \
+                    -Dsonar.sources=${env.WORKSPACE_PATH_JENKINS_SERVER}/src \
                     -Dsonar.java.binaries=${env.WORKSPACE_PATH_JENKINS_SERVER}/target/classes \
                     -Dsonar.host.url=$SONAR_URL \
                     -Dsonar.token=$SONAR_AUTH_TOKEN \
