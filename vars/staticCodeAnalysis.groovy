@@ -31,7 +31,7 @@ def call() {
             
             withSonarQubeEnv('sonarqube') { 
                 sh """
-                    ${tool 'sonarqube'}/bin/sonar-scanner \
+                    ${tool 'sonarqube-scanner'}/bin/sonar-scanner \
                     -Dsonar.projectKey=${JOB_BASE_NAME} \
                     -Dsonar.sources=${WORKSPACE}/.sonar/ \
                     -Dsonar.host.url=${SONAR_URL} \
