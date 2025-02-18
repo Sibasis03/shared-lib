@@ -1,2 +1,2 @@
 env.REMOTE_USER = 'ubuntu'
-env.REMOTE_SERVER = '34.220.195.192'
+env.REMOTE_SERVER = '34.219.52.131'
