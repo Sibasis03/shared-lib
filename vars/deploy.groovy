@@ -16,7 +16,7 @@ def call(String git_hash) {
     """
     sh """
         ssh -o StrictHostKeyChecking=no \${REMOTE_USER}@\${REMOTE_SERVER} \
-        'cd /home/ubuntu/app && export githash="${githash}" && echo "Git Hash is \$githash" && docker-compose up -d'
+        'cd /home/ubuntu/app && export githash="${git_hash}" && echo "Git Hash is \$git_hash" && docker-compose up -d'
     """
     echo "Deploying with Git hash: ${git_hash}"
 }
